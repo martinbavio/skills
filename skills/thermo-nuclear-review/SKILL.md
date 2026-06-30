@@ -1,7 +1,6 @@
 ---
 name: thermo-nuclear-review
 description: Comprehensive security and correctness audit of a branch's changes. Use for thermo nuclear, thermonuclear, or deep review requests, or branch/PR diff audits focused on bugs, breaking changes, security issues, devex regressions, and feature-gate leaks.
-disable-model-invocation: true
 ---
 
 # Thermo Nuclear Review
@@ -48,4 +47,3 @@ Flag issues found by BugBot or others in the PR/MR discussion that you include i
 # Critical Rules
 - NEVER present issues with unfinished research. E.g. Never say something like, "The client has issue X, but if handled in the backend then this is ok." if you have access to the backend code and can check for yourself.
 - You MUST wait to check the PR/MR discussion until AFTER you have performed your audit. This way you have fresh eyes while you review.
-- Be EXTREMELY thorough, rigorous, careful, ambitious, and attentive. NOTHING can slip through.

@@ -1,6 +1,6 @@
 ---
 name: tenacious-review
-description: "Consolidated local review — apply the thermo-nuclear correctness/security and code-quality rubrics (plus React/studio lenses when the diff touches a web frontend) over the worktree diff, then synthesize one prioritized, deduped report. Use for tenacious review, full review, or a thorough pre-PR audit of the current branch."
+description: "Consolidated local PR review — applies the thermo-nuclear correctness/security and code-quality rubrics (plus React/studio lenses when the diff touches a web frontend) over the worktree diff and synthesizes one prioritized, deduped report. User-invoked."
 disable-model-invocation: true
 ---
 

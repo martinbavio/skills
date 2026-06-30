@@ -17,6 +17,7 @@ Run one consolidated review of the current worktree by applying several independ
   - `git diff <base>...HEAD` (the full patch)
 - Read the **current full contents** of the changed files (skip deletions, lockfiles, and generated output) so reviewers evaluate real code, not just the patch.
 - If the diff is empty, stop and report "no changes vs `<base>`".
+- If you are reviewing the result of a **structural recommendation** from a prior pass (an extraction or refactor you advised), re-run the affected lens against it — that new surface has been reviewed by no one.
 
 ## 2. Decide which lenses apply
 

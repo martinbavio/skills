@@ -38,6 +38,14 @@ If you identify a high risk finding, but the intent of the branch is to introduc
 If you report issues as High priority when they are not in fact high priority / meaningful issues, devs will lose trust in you and stop listening to you over time.
 NEVER misreport the priority / importance of issues. Be extremely thorough in tracing issues end-to-end to gain complete, and total confidence before reporting.
 
+## Latent Invariant & State-After-Failure Guidelines
+Reason one step past the present-tense bug — two classes hide from a "is it broken today?" pass:
+- **Unenforced invariants / future-caller hazards.** Flag a contract a docstring, type, or comment promises but the code does not enforce, and a shared helper that is unsafe for a *future* caller — even when every *current* caller happens to be safe. "No bug today" is not "no finding": report it as currently-harmless and name the footgun.
+- **State after a failed await.** When the diff sets a ref / flag / latch (a `created` / `sent` / `initialized` guard), trace its value across the *whole* sequence of actions, including after an awaited write rejects. A guard flipped before its async write resolves can latch the wrong state and poison every later action — a worse, and often more likely, bug than the one-shot race.
+
+## Severity Calibration
+Calibrate severity by *latched blast radius*, not trigger probability. If one transient failure leaves a flag / ref in a state that breaks all later operations (e.g. silent data loss on reload), rate it by that persistent consequence — do not discount to Low just because the initial trigger is rare. This is the counterweight to over-reporting above: be accurate, not merely conservative.
+
 # Final Response
 IF you have medium-to-high priority / risk findings, and there is a PR for this branch, then check the PR/MR discussion using gh/glab cli to see if there are comments from BugBot or others present.
 If so, take their findings into account. If they found issues you missed, evaluate them to determine if they are valid and include them in your report. If they found some of the same issues you did, see if there is anything from their findings that are worth incorporating into your response.

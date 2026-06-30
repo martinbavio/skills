@@ -2,7 +2,7 @@
 
 Personal [agent skills](https://github.com/vercel-labs/skills) by [@mbavio-phota](https://github.com/mbavio-phota).
 
-[![skills.sh](https://skills.sh/b/mbavio-phota/skills)](https://skills.sh/mbavio-phota/skills)
+[![skills.sh](https://skills.sh/b/martinbavio/skills)](https://skills.sh/martinbavio/skills)
 
 ## Install
 

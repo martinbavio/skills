@@ -12,6 +12,8 @@ npx skills add martinbavio/skills --skill tenacious-review
 
 ## Skills
 
+### Review
+
 | Skill | Description |
 |:------|:------------|
 | `tenacious-review` | Consolidated local PR review — runs the thermo correctness/security + code-quality rubrics (plus React/studio lenses when the diff touches a web frontend) over the worktree diff, then synthesizes one prioritized, deduped report. Harness-agnostic (Claude Code, Cursor, Codex, …); parallel sub-agents where supported, sequential otherwise. |
@@ -19,6 +21,13 @@ npx skills add martinbavio/skills --skill tenacious-review
 | `thermo-nuclear-code-quality-review` | Strict maintainability audit (abstraction quality, giant files, spaghetti-condition growth, boundaries). |
 
 `tenacious-review` orchestrates the two `thermo-nuclear-*` rubrics as its always-on lenses.
+
+### Linear workflow
+
+| Skill | Description |
+|:------|:------------|
+| `to-linear-prd` | Synthesizes the current conversation into a PRD and publishes it to Linear as a resource document under an umbrella issue — no interview, just synthesis of what's been discussed. |
+| `to-linear-plan` | Turns a Linear-hosted PRD into a multi-phase, tracer-bullet implementation plan saved to `./plans/`, then fills the umbrella issue (single-phase) or creates one child issue per phase (multi-phase). Invoke as `/to-linear-plan <umbrella-issue>`. |
 
 ## Attribution
 
